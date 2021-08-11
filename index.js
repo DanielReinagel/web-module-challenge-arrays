@@ -46,7 +46,7 @@ Use the copy function below to do the following:
 */
 
 function copy(array){
-  return array;
+  return [...array];
 }
 
 const theOriginalFlavors = copy(originalFlavors);
@@ -138,7 +138,6 @@ function removeFlavorByName(array, flavor){
   for(let i=0; i<array.length; i++){
     if (array[i]===flavor){
       array.splice(i, 1);
-      return array;
     }
   }
   return array;
@@ -166,10 +165,15 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array, string){
+  const filteredArray = [];
+  for (let i=0; i<array.length; i++){
+    if(array[i].includes(string)){
+      filteredArray.push(array[i]);
+    }
+  }
+  return filteredArray;
 }
-
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
